@@ -2,6 +2,7 @@ public class PaymentSlip {
     private String name;
     private int hourlyRate;
     private int hours;
+    private static final double taxRate = 0.3;
 
 
     public PaymentSlip (String name, int hourlyRate, int hours){
@@ -32,20 +33,9 @@ public class PaymentSlip {
         return hourlyRate * hours; 
     }
     public double calculateNetSalary (){
-        return calculateSalary() * 0.7; 
+        return calculateSalary() * (1-taxRate); 
     }
-    public void printPayment (){
-        System.out.println("--------------------");
-        System.out.println("## PAYMENT INFORMATION ##");
-        System.out.println("Name: \t\t" + name);
-        System.out.println("Hourly rate: \t$" + hourlyRate);
-        System.out.println("Hourly rate: \t" + hours +"\n");
 
-        System.out.println("Salary: \t$"  + calculateSalary());
-        System.out.println("Net Salary: \t$" + calculateNetSalary());
-        System.out.println("If you have any questions regarding your salary, contact Bob: \n--------------------");
-    }
-   
 
 
 }

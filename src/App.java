@@ -7,18 +7,26 @@ public class App {
         String name = myScanner.nextLine(); 
         
         System.out.println("hourlyRate:");
-        String hourlyRate = myScanner.nextLine(); 
+        int hourlyRate = myScanner.nextInt(); 
         
         System.out.println("Hours:");
-        String hours = myScanner.nextLine(); 
+        int hours = myScanner.nextInt(); 
 
-        int intHours = Integer.parseInt(hours);
-        int intHourlyRate = Integer.parseInt(hourlyRate);
 
-        PaymentSlip p1 = new PaymentSlip(name, intHourlyRate, intHours);
-        p1.printPayment();
+        PaymentSlip p1 = new PaymentSlip(name, hourlyRate, hourlyRate);
+
+        System.out.println("--------------------");
+        System.out.println("## PAYMENT INFORMATION ##");
+        System.out.println("Name: \t\t" + p1.getName());
+        System.out.println("Hourly rate: \t$" + p1.getHourlyRate());
+        System.out.println("Hours: \t" + p1.getHours() +"\n");
+
+        System.out.println("Salary: \t$"  + p1.calculateSalary());
+        System.out.println("Net Salary: \t$" + p1.calculateNetSalary());
+        System.out.println("If you have any questions regarding your salary, contact Bob: \n--------------------");
+    }
+   
 
 
          
     }
-}
